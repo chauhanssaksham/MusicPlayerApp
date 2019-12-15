@@ -4,7 +4,10 @@ This App is created on NodeJS,
             Database: MongoDB,
 
 TODO:
-    1. Implement the "songs.js" file on a database.            
+    1. Implement the "songs.js" file on a database.
+            --->Creat schema === DONE
+            --->Populate the Database
+            --->            
 
 Thoughts:
     Implement already made Music Player First, then add Layouts.
