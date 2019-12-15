@@ -6,6 +6,10 @@ const port = 9000;
 //Add Routes to the App
 app.use('/', require('./routes'));
 
+//Set up EJS as our View Engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
 //The server listens and runs on PORT
 app.listen(port, function(err){
     if(err){
