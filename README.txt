@@ -2,7 +2,9 @@ This App is created on NodeJS,
                 using Express,
         View Engine used: EJS,
             Database: MongoDB,
-            
+
+TODO:
+    1. Implement the "songs.js" file on a database.            
 
 Thoughts:
     Implement already made Music Player First, then add Layouts.

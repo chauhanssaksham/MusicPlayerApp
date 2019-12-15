@@ -3,6 +3,9 @@ const express = require('express');
 const app = express();
 const port = 9000;
 
+//Initialize the Database:
+const db = require('./config/mongoose');
+
 //Add the static Folder, '/assets'
 app.use(express.static('./assets'));
 
