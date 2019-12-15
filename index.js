@@ -2,8 +2,6 @@
 const express = require('express');
 const app = express();
 const port = 9000;
-const Songs = require('./models/songs');
-
 //Initialize the Database:
 const db = require('./config/mongoose');
 

@@ -6,8 +6,8 @@ This App is created on NodeJS,
 TODO:
     1. Implement the "songs.js" file on a database.
             --->Creat schema === DONE
-            --->Populate the Database
-            --->            
+            --->Populate the Database === DONE
+            --->Implement getting the songs from the database
 
 Thoughts:
     Implement already made Music Player First, then add Layouts.

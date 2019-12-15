@@ -69,4 +69,3 @@ var songsInQueue = [],
 // Dear TA, to get a feel of what these arrays are about, try this: change the values of the song-Ids
 //in the above arrays (add more, remove, change them, etc etc) and refresh the page to see the diff.
 //You can also try and change the "inQueue" and "isFav" properteis of some songs and see the change.
-module.exports.songs = songs;
