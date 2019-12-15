@@ -1,0 +1,11 @@
+ @media only screen and (max-width: 600px){
+ 	#right_part{
+ 		width:65%;
+ 	}
+ 	#left_part{
+ 		width:35%;
+ 	}
+ 	header div span{
+		left:6%;
+	}
+ }

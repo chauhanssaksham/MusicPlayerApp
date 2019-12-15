@@ -1,0 +1,15 @@
+:root{
+	/*----- THEME COLORS -----*/
+	--dark-bg-2: rgba(27,27,27,1);
+	--dark-bg-1: #232323;
+	--grey-bg-1:#3a3a3a;
+	--grey-bg-2:#353535;
+	--theme-blue-1: rgba(69,170,242,1);
+	/*----- FONT COLORS -----*/
+	--light-text-1: #f1f2f6;
+	--light-text-2: #ffffff;
+	--blue-text-1:#2980b9;
+	--grey-text-1:#a3acc1;
+	/*-----FONT FAMILIES -----*/
+	--FF-1: sans-serif;
+}
