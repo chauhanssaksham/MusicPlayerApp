@@ -4,9 +4,13 @@ const app = express();
 const port = 9000;
 //Initialize the Database:
 const db = require('./config/mongoose');
+//Initialize Layouts:
+const expressLayouts = require('express-ejs-layouts');
 
 //Add the static Folder, '/assets'
 app.use(express.static('./assets'));
+
+app.use(expressLayouts);
 
 //Add Routes to the App
 app.use('/', require('./routes'));

@@ -23,6 +23,7 @@ module.exports.home = function(req, res){
     });
     return res.render('home', {
         songs: songsArr,
-        queue: queueArr
+        queue: queueArr,
+        title: 'Geet.com'
     });
 }

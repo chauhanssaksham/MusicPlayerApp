@@ -1,0 +1,30 @@
+<footer class="flex"> <!-- The song player at the bottom, opens up when you hover at it -->
+    <div id="top" class="flex"> 
+    <div id="nowPlayingSong">
+        <img src="images/thumbs/suicide-squad.jpg" id="playerImg" alt="">
+    </div>
+    <div id="musicControls">
+        <i class="fas fa-step-backward" id="prev-button" onclick="prevSong()"></i> 
+        <!-- Play last song -->
+        <i class="fas fa-play" id="play-pause-button" onclick="toggleSong()"></i>
+        <!-- Play and pause current song -->
+        <i class="fas fa-step-forward" id="next-button" onclick="nextSong()"></i>
+        <!-- Play Next song -->
+    </div>
+    <div id="playerSongInfo" class="name-singer">
+        <span><!-- Song name dynamically goes here --></span><br>
+        <!-- Song Artists' name goes here -->
+    </div>
+    <div id="moreControls">
+        <i class="fas fa-random"></i>
+        <i class="fas fa-redo"></i>
+        <i class="fas fa-volume-up"></i>
+    </div>
+    </div>
+    <div id="bottom">
+        <span id="song_time_played"><!-- The time the song has played goes here. --></span>
+    <input type="range" min="0" max="1000" value="0" class="slider" id="songSlider"> 
+    <!-- The time slider for the song -->
+        <span id="playerSongDuration"><!-- The total duration of the song goes here, from songs[i].duration; dyanmic for each song --></span>
+    </div>
+</footer>

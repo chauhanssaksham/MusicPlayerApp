@@ -1,247 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Geet.com</title>
-	<link rel="icon" href="icon.png" type="image/x-icon" /> <!--Favicon-->
-	<link href="https://fonts.googleapis.com/css?family=Arimo:700i|Libre+Franklin|Nunito|Rubik&effect=3d-float|anaglyph&display=swap" rel="stylesheet"> <!-- Google Fonts Link -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> <!-- Font Awesome Link-->
-	<link rel="stylesheet" href="styles/variables.css">  <!-- Style Sheet containing all variables -->
-	<link rel="stylesheet" href="styles/style.css">		<!-- Main style sheet -->
-	<link rel="stylesheet" href="styles/breakOne.css"><!-- Stylesheet for breakPoint one -->
-	<link rel="stylesheet" href="styles/breakTwo.css"> <!-- SS for breakpoint 2 -->
-	</head>
-<body>
-	<!--The header at the top-->
-	<header>
-		<div id="header_container">
-			<div id="left_part"> <!--Contains the logo and "Favorites"  -->
-				<img id="logo" src="images/icon.png" alt="Geet icon">
-				<span><a href="#">Favourites</a></span>
+<main class="flex"> 
+	<!-- The Queue, the list items inside the ol are generated dynamically using javascript in ol. This is so that it is easy to manage and change the songs which are in the queue. -->
+	<aside>
+		<div class="sticky">
+			<div id="heading">
+				<h3 class="font-effect-anaglyph"><i class="fas fa-list"></i>Queue </h3> 
 			</div>
-			<div id="right_part" class="flex"> <!-- The search bar, Notifications icon and profile pic -->
-				<div id="search_bar"> <!-- Custom search bar using CSS -->
-					<i class="fas fa-search"></i>
-					<input type="text" placeholder="Search">
-				</div>
-				<div id="notification-bell">  <!-- The notification bell icon and the notifications itself. position:relative. Goes away when clicked once, suggesting that the notifications have been "read" -->
-					<i class="fas fa-bell"></i> <!-- The notifications icon -->
-					<span id="notif">3</span> <!-- Number of notifications (the red dot), positioned absolute -->
-					<div id="Notifications"> <!-- This section opens up when the notifications icon is clicked -->
-						<!-- After open this once, the background of this section changes, suggesting that the notifications have been read -->
-						<ul>
-							<div id="triangle-tip"></div> 
-							<li><span>Explore the hottest new singles of August right <a href="">here!</a> &#128525; </span>
-								<img src="images/icon.png" alt=""></li>
-							<li><span>Interested in 'The Weeknd' and 'Eminem' &#128293;? Find out more about their most controversial &#129325; songs <a href="">here!</a></span><img src="images/icon.png" alt=""></li>
-							<li><span>Welcome to Geet.com, Saksham! &#x2764; Become a member for unlimited song downloads for an year!</span><img src="images/icon.png" alt=""></li>
-						</ul>
-					</div>
-				</div>
-				<div>
-				<img id="profilepic" src="images/profile.jpg" alt="Profile Pic">
-				</div>
-			</div>
+			<ol id="queue">
+				<!-- One sample list item looks like this: -->
+				<!--
+					<li data-songid="1"> 					 //Song id identifies the song  
+						<div class="ol-number">02</div>      //this li points to, using songs.js
+						<div> 							     //as is done throughout the 
+							<img src="images/thumbs/starboy.jpg">     	//application
+							<i class="fas fa-play"></i>			//Details about how the song-Id
+						</div>									//system works in "songs.js"
+						<div class="name-author font-effect-3d-float">
+							<span>Stargirl Interlude</span><br>  		//song name
+							The Weeknd									//Artist name
+						</div>
+						<div class="ol-heart">
+							<i class="far fa-heart"></i>				//Favorites "heart icon"
+						</div>
+					</li>
+				//Songs can be added to the queue by the user also. 
+				//On page load, the songs with inQueue:true, in songs.js are in the queue-->
+			</ol>
 		</div>
-	</header>
-	<!-- The main body, includes the left #main part and the queue -->
-	<main class="flex"> 
-		<!-- The Queue, the list items inside the ol are generated dynamically using javascript in ol. This is so that it is easy to manage and change the songs which are in the queue. -->
-		<aside>
-			<div class="sticky">
-				<div id="heading">
-					<h3 class="font-effect-anaglyph"><i class="fas fa-list"></i>Queue </h3> 
+	</aside>
+	<!-- The left #main part, including the carousel, top picks, top charts, etc -->
+	<div id="main"> 
+		<div id="carousel" class="flex"> <!-- The carousel -->
+			<!-- The .board class styles all three boards, and the left, right and center-board classes are changed accordingly using JS, when the carousel is rotated -->
+				<div class="board left-board">
+					<img src="images/posters/diljit.jpg" alt="">
+					<div class="show-up flex">
+						<div class="play-button"><i class="fas fa-play playSong" data-songId="13"></i></div>
+						<div class="name-author"><span>Putt Jatt Da</span>- Diljit Dosanjh</div>
+						<div class="rightSide">2:46 
+							<i class="fas fa-plus-circle addSong" data-songId="13"></i>
+						</div>
+					</div>
 				</div>
-				<ol id="queue">
-					<!-- One sample list item looks like this: -->
-					<!--
-						<li data-songid="1"> 					 //Song id identifies the song  
-							<div class="ol-number">02</div>      //this li points to, using songs.js
-							<div> 							     //as is done throughout the 
-								<img src="images/thumbs/starboy.jpg">     	//application
-								<i class="fas fa-play"></i>			//Details about how the song-Id
-							</div>									//system works in "songs.js"
-							<div class="name-author font-effect-3d-float">
-								<span>Stargirl Interlude</span><br>  		//song name
-								The Weeknd									//Artist name
-							</div>
-							<div class="ol-heart">
-								<i class="far fa-heart"></i>				//Favorites "heart icon"
-							</div>
-						</li>
-					//Songs can be added to the queue by the user also. 
-					//On page load, the songs with inQueue:true, in songs.js are in the queue-->
-				</ol>
-			</div>
-		</aside>
-		<!-- The left #main part, including the carousel, top picks, top charts, etc -->
-		<div id="main"> 
-			<div id="carousel" class="flex"> <!-- The carousel -->
-				<!-- The .board class styles all three boards, and the left, right and center-board classes are changed accordingly using JS, when the carousel is rotated -->
-					<div class="board left-board">
-						<img src="images/posters/diljit.jpg" alt="">
-						<div class="show-up flex">
-							<div class="play-button"><i class="fas fa-play playSong" data-songId="13"></i></div>
-							<div class="name-author"><span>Putt Jatt Da</span>- Diljit Dosanjh</div>
-							<div class="rightSide">2:46 
-								<i class="fas fa-plus-circle addSong" data-songId="13"></i>
-							</div>
+				<div class="board right-board">
+					<img src="images/posters/bohemia.jpg" alt="">
+					<div class="show-up flex">
+						<div class="play-button"><i class="fas fa-play playSong" data-songId="14"></i></div>
+						<div class="name-author"><span>Zamana Jali</span>- Bohemia</div>
+						<div class="rightSide">3:04
+							 <i class="fas fa-plus-circle addSong" data-songId="14"></i>
 						</div>
 					</div>
-					<div class="board right-board">
-						<img src="images/posters/bohemia.jpg" alt="">
-						<div class="show-up flex">
-							<div class="play-button"><i class="fas fa-play playSong" data-songId="14"></i></div>
-							<div class="name-author"><span>Zamana Jali</span>- Bohemia</div>
-							<div class="rightSide">3:04
-							 	<i class="fas fa-plus-circle addSong" data-songId="14"></i>
-							</div>
+				</div>
+				<div class="board center-board">
+					<img src="images/posters/badshah.jpg" alt="Badshah New song Paagal">
+					<div class="show-up flex">
+					 <!-- The .show up div is the menu that pops up when the CENTRAL BOARD is hovered on, which includes options to play and add the song to queue-->
+						<div class="play-button"><i class="fas fa-play playSong" data-songId="12"></i></div>
+						<div class="name-author"><span>Paagal</span>- Badshah</div>
+						<div class="rightSide">3:04 
+							<i class="fas fa-plus-circle addSong" data-songId="12"></i>
+							<!-- any element with .addSong class holds an eventLister to add the song to the queue, and the song is identified by the data-songId attribute -->
 						</div>
 					</div>
-					<div class="board center-board">
-						<img src="images/posters/badshah.jpg" alt="Badshah New song Paagal">
-						<div class="show-up flex">
-						 <!-- The .show up div is the menu that pops up when the CENTRAL BOARD is hovered on, which includes options to play and add the song to queue-->
-							<div class="play-button"><i class="fas fa-play playSong" data-songId="12"></i></div>
-							<div class="name-author"><span>Paagal</span>- Badshah</div>
-							<div class="rightSide">3:04 
-								<i class="fas fa-plus-circle addSong" data-songId="12"></i>
-								<!-- any element with .addSong class holds an eventLister to add the song to the queue, and the song is identified by the data-songId attribute -->
-							</div>
-						</div>
+				</div>
+		</div>
+		<div class="format1" id="top-picks"> <!--The format 1 and format 2 are reusable classes beacuse yaaaa. -->
+			<h3 class="font-effect-anaglyph">Our Top Picks - for you</h3>
+			<div class="flex">
+				<!-- Again, this section is generated dynamically in dynamic.js -->
+				<!-- The songs in this section are listed by their songIds in "topPicksArr" array in songs.js, You can try and change up that array to see how this works-->
+				<!-- Sample of an iteration of song in this section: -->
+				<!-- 
+				<div> //Position:relative
+					<div class="album-cover playable">
+						<img src="images/thumbs/evolve.jpg" alt="Believer" class="playSong" data-songid="16">
+						<i class="fas fa-play playSong" data-songid="16"></i>
 					</div>
-			</div>
-			<div class="format1" id="top-picks"> <!--The format 1 and format 2 are reusable classes beacuse yaaaa. -->
-				<h3 class="font-effect-anaglyph">Our Top Picks - for you</h3>
-				<div class="flex">
-					<!-- Again, this section is generated dynamically in dynamic.js -->
-					<!-- The songs in this section are listed by their songIds in "topPicksArr" array in songs.js, You can try and change up that array to see how this works-->
-					<!-- Sample of an iteration of song in this section: -->
-					<!-- 
-					<div> //Position:relative
-						<div class="album-cover playable">
-							<img src="images/thumbs/evolve.jpg" alt="Believer" class="playSong" data-songid="16">
-							<i class="fas fa-play playSong" data-songid="16"></i>
-						</div>
-						<div class="name-auth font-effect-3d-float">
-							<span>Believer</span><br>
-							Imagine Dragons<br>
-							3:22
-						</div>
-						<div class="rightSide"> //This is positioned absolute, thats why parent class was relative
-							<div class="relative"> //position relative because its children will be positioned relative to this
-								<i class="fas fa-ellipsis-v"></i> //The three dots. Open up a //menu on click (.tooltip)
-								<div class="tooltip"> //The tooltip menu that opens up
-									<div class="addSong" data-songid="16">
-										Add to queue 
-										<i class="fas fa-plus-circle"></i>
-									</div>
-									<div class="removeSong">
-										Not interested //Removes the song iteration from top //picks...
-										<i class="fas fa-times-circle"></i>
-									</div>
+					<div class="name-auth font-effect-3d-float">
+						<span>Believer</span><br>
+						Imagine Dragons<br>
+						3:22
+					</div>
+					<div class="rightSide"> //This is positioned absolute, thats why parent class was relative
+						<div class="relative"> //position relative because its children will be positioned relative to this
+							<i class="fas fa-ellipsis-v"></i> //The three dots. Open up a //menu on click (.tooltip)
+							<div class="tooltip"> //The tooltip menu that opens up
+								<div class="addSong" data-songid="16">
+									Add to queue 
+									<i class="fas fa-plus-circle"></i>
+								</div>
+								<div class="removeSong">
+									Not interested //Removes the song iteration from top //picks...
+									<i class="fas fa-times-circle"></i>
 								</div>
 							</div>
 						</div>
-					</div> 
-					-->
-				</div>
-			</div>
-			<div class="format2" id="top-charts-hollywood">
-				<h3 class="font-effect-anaglyph">Top charts - Bollywood</h3>
-				<div>
-					<!--songs in the "topChartsHollywood" array in songs.js -->
-				</div>
-			</div>
-			<div class="format2" id="artists">
-				<!-- This section is relatively incomplete, due to time constraints. The plan was to:
-				a. Generate this section dynamically too, with each artist having it's artist id
-				b. Clicking on the artist wouldve opened a another page with that artists song. That page would've been just an empty template, and clicking a certain artist would send it's artist-id to the next page, using which the next "Artist.html" page would've filled itself. But anyway later I guess. -->
-				<h3 class="font-effect-anaglyph">Your Favorite Artists</h3>
-				<div>
-					<div class="thumb-image">
-						<img src="images/artists/sidhu-moosewala.png">
-						<div>
-							<span>Sidhu Moosewala</span>
-						</div>
 					</div>
-					<div class="thumb-image">
-						<img src="images/artists/weeknd.jpg">
-						<div>
-							<span>The Weeknd</span>
-						</div>
-					</div>
-					<div class="thumb-image">
-						<img src="images/artists/imagine-dragons.jpg">
-						<div>
-							<span>Imagine Dragons</span>
-						</div>
-					</div><div class="thumb-image">
-						<img src="images/artists/honey-singh.jpg">
-						<div>
-							<span>Honey Singh</span>
-						</div>
+				</div> 
+				-->
+			</div>
+		</div>
+		<div class="format2" id="top-charts-hollywood">
+			<h3 class="font-effect-anaglyph">Top charts - Bollywood</h3>
+			<div>
+				<!--songs in the "topChartsHollywood" array in songs.js -->
+			</div>
+		</div>
+		<div class="format2" id="artists">
+			<!-- This section is relatively incomplete, due to time constraints. The plan was to:
+			a. Generate this section dynamically too, with each artist having it's artist id
+			b. Clicking on the artist wouldve opened a another page with that artists song. That page would've been just an empty template, and clicking a certain artist would send it's artist-id to the next page, using which the next "Artist.html" page would've filled itself. But anyway later I guess. -->
+			<h3 class="font-effect-anaglyph">Your Favorite Artists</h3>
+			<div>
+				<div class="thumb-image">
+					<img src="images/artists/sidhu-moosewala.png">
+					<div>
+						<span>Sidhu Moosewala</span>
 					</div>
 				</div>
-			</div>
-			<div class="format2" id="top-charts-bollywood">
-				<h3 class="font-effect-anaglyph">Top charts - Bollywood</h3>
-				<div>
-					<!--songs in the "topChartsBollywood" array in songs.js -->
-					<!-- Sample iteration of a song in format 2: -->
-					<!-- 
-					<div class="thumb-image playable">
-						<img src="images/thumbs/pbx1.jpg" alt="Kaala Chashma - Skit" data-songid="25" class="playSong">
-						<i class="fas fa-play playSong" data-songid="25"></i>
-						<div> 			//The tooltip that pops down with the song Name and the 
-							<span>Kaala Chashma - Skit</span>			//artist
-							-Sidhu Moosewala
-						</div>
-					</div> 
-					-->
+				<div class="thumb-image">
+					<img src="images/artists/weeknd.jpg">
+					<div>
+						<span>The Weeknd</span>
+					</div>
 				</div>
-			</div>
-			<div class="format1" id="geet-specials">
-				<h3 class="font-effect-anaglyph">Geet Specials</h3>
-				<div class="flex">
-					<!--songs in the "geetSpecialsArr" array in songs.js -->
+				<div class="thumb-image">
+					<img src="images/artists/imagine-dragons.jpg">
+					<div>
+						<span>Imagine Dragons</span>
+					</div>
+				</div><div class="thumb-image">
+					<img src="images/artists/honey-singh.jpg">
+					<div>
+						<span>Honey Singh</span>
+					</div>
 				</div>
 			</div>
 		</div>
-	</main>
-	<footer class="flex"> <!-- The song player at the bottom, opens up when you hover at it -->
-		<div id="top" class="flex"> 
-		<div id="nowPlayingSong">
-			<img src="images/thumbs/suicide-squad.jpg" id="playerImg" alt="">
+		<div class="format2" id="top-charts-bollywood">
+			<h3 class="font-effect-anaglyph">Top charts - Bollywood</h3>
+			<div>
+				<!--songs in the "topChartsBollywood" array in songs.js -->
+				<!-- Sample iteration of a song in format 2: -->
+				<!-- 
+				<div class="thumb-image playable">
+					<img src="images/thumbs/pbx1.jpg" alt="Kaala Chashma - Skit" data-songid="25" class="playSong">
+					<i class="fas fa-play playSong" data-songid="25"></i>
+					<div> 			//The tooltip that pops down with the song Name and the 
+						<span>Kaala Chashma - Skit</span>			//artist
+						-Sidhu Moosewala
+					</div>
+				</div> 
+				-->
+			</div>
 		</div>
-		<div id="musicControls">
-			<i class="fas fa-step-backward" id="prev-button" onclick="prevSong()"></i> 
-			<!-- Play last song -->
-			<i class="fas fa-play" id="play-pause-button" onclick="toggleSong()"></i>
-			<!-- Play and pause current song -->
-			<i class="fas fa-step-forward" id="next-button" onclick="nextSong()"></i>
-			<!-- Play Next song -->
+		<div class="format1" id="geet-specials">
+			<h3 class="font-effect-anaglyph">Geet Specials</h3>
+			<div class="flex">
+				<!--songs in the "geetSpecialsArr" array in songs.js -->
+			</div>
 		</div>
-		<div id="playerSongInfo" class="name-singer">
-			<span><!-- Song name dynamically goes here --></span><br>
-			<!-- Song Artists' name goes here -->
-		</div>
-		<div id="moreControls">
-			<i class="fas fa-random"></i>
-			<i class="fas fa-redo"></i>
-			<i class="fas fa-volume-up"></i>
-		</div>
-		</div>
-		<div id="bottom">
-			<span id="song_time_played"><!-- The time the song has played goes here. --></span>
-		<input type="range" min="0" max="1000" value="0" class="slider" id="songSlider"> 
-		<!-- The time slider for the song -->
-			<span id="playerSongDuration"><!-- The total duration of the song goes here, from songs[i].duration; dyanmic for each song --></span>
-		</div>
-	</footer>
-	<script src="scripts/script.js" type="text/javascript"></script>
-	<script src="scripts/songs.js" type="text/javascript"></script>
-    <script src="scripts/dynamic.js" type="text/javascript"></script>
-</body>
-</html>
+	</div>
+</main>
