@@ -1,0 +1,122 @@
+/* -----FOOTER FROM HERE-------*/
+footer{
+	background:var(--dark-bg-2);
+	height:0;
+	border-top:15px solid var(--theme-blue-1);
+	border-left:1px solid var(--theme-blue-1);
+	border-right:1px solid var(--theme-blue-1);
+	position:fixed;
+	bottom:0;
+	width:64%;
+	left:18%; 
+	transition:0.5s all;
+}
+footer:hover{
+	border-top:6px solid var(--theme-blue-1);
+	height:70px;
+}
+footer>div{
+	width:100%;
+	justify-content:space-around;
+}
+#nowPlayingSong{
+	width:38px;
+	height:38px;
+	margin-top:6px;
+	margin-left:8px;
+}
+#nowPlayingSong img{
+	width:100%;
+	height:100%;
+}
+#musicControls{
+	font-size:1.5rem;
+	margin:13px 10px 0 13px;
+	color:var(--grey-text-1);
+}
+#musicControls i{
+	cursor: pointer;
+}
+#musicControls i:hover{
+	color:var(--light-text-1);
+}
+.name-singer{
+	padding:10px 5px 0 5px;
+	color:var(--grey-text-1);
+	font-family: "Libre Franklin";
+	font-size: 0.8rem;
+	line-height:1rem;
+	width:51%;
+	overflow-x: scroll;
+  	white-space: nowrap;
+}
+.name-singer span{
+	font-size: 1rem;
+	letter-spacing: 0.5px;
+	color:var(--light-text-2);
+	font-family: "Arimo", sans-serif;
+}
+#moreControls{
+	font-size: 1.2rem;
+	color:var(--light-text-1);
+	margin-left: 0px;
+	margin-top: 14px;
+}
+#moreControls i{
+	margin:0 3px;
+	cursor:pointer;
+}
+#moreControls i:hover{
+	color:var(--theme-blue-1);
+}
+#bottom{
+	height:20px;
+	color:var(--grey-text-1);
+	text-align: center;
+	font-size: 0.8rem;
+	font-family: sans-serif;
+	width:100%;
+	margin-top:8px;
+	line-height: 0.8rem;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  position: relative;
+  top:-3px;
+  height: 3px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.slider:hover{
+	opacity:1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: var(--theme-blue-1);
+  cursor: pointer;
+	border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: var(--theme-blue-1);
+  cursor: pointer;
+  border-radius:50%;
+}
+@media only screen and (max-width: 810px){
+	footer{
+		width:100%;
+		left:0;
+	}
+	.name-singer{
+		width:45%;
+	}
+}

@@ -10,7 +10,10 @@ const expressLayouts = require('express-ejs-layouts');
 //Add the static Folder, '/assets'
 app.use(express.static('./assets'));
 
+//Express Layout Settings
 app.use(expressLayouts);
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
 //Add Routes to the App
 app.use('/', require('./routes'));

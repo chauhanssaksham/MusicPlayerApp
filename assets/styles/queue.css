@@ -1,0 +1,171 @@
+/*-------------Queue--------*/
+aside{
+    width:28%;
+    box-sizing:border-box;
+    padding-left:15px;
+    position:relative;
+    }
+    .sticky{
+        position: sticky;
+        top:20px;
+    }
+    aside #heading{
+        margin:10px 0px 5px 0px;
+        color:var(--light-text-2);
+        padding:10px 0 5px 20px;
+        width:100%;
+        position: relative;
+        font-weight: lighter;
+        font-family:"Rubik",sans-serif;
+        background: var(--dark-bg-2);
+        border-radius: 10px 10px 0 0 ;
+        border-bottom:4px solid var(--theme-blue-1);
+    }
+    .fa-list{
+        position: absolute;
+        right:20px;
+        bottom:8px;
+    }
+    aside ol{
+        list-style: none;
+    }
+    aside ol li{
+        display: flex;
+        flex-wrap:wrap;
+        margin:3px 0;
+        padding:5px 10px 1px 2px;
+        position:relative;
+        cursor: pointer;
+    }
+    ol li .ol-number{
+        width:8%;
+        text-align: center;
+        vertical-align: center;
+        font-size:0.8rem;
+        margin-top:15px;
+        font-family: 'Nunito', monospace;
+        color:var(--grey-text-1);
+    }
+    ol li div img{
+        height:45px;
+        width:45px;
+        border-radius: 5px;
+        margin-left:5%;
+        position: relative;
+        -webkit-box-shadow: 0px 0px 4.5px -1px rgba(255,255,255,0.2);
+        -moz-box-shadow: 0px 0px -4.5px -1px rgba(255,255,255,0.2);
+        box-shadow: 0px 0px -4.5px -1px rgba(255,255,255,0.2);
+    }
+    ol li:hover div .fa-play{
+        visibility: visible;
+    }
+    ol li div .fa-play{
+        position:absolute;
+        color:rgba(255,255,255,0.5);
+        top:18px;
+        font-size: 1.2rem;
+        left:45px;
+        visibility: hidden;
+    }
+    .name-author{
+        margin-left:4%;
+        margin-top: 9px;
+        color:var(--grey-text-1);
+        font-family: "Libre Franklin";
+        font-size: 0.7rem;
+        line-height:0.85rem;
+        width:63%;
+        overflow-x: scroll;
+          white-space: nowrap;
+    }
+    .name-author span{
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        color:var(--light-text-2);
+        font-family: "Arimo", sans-serif;
+    }
+    .ol-heart{
+        font-size:0.8rem;
+        color:white;
+        position:absolute;
+        top:21px;
+        cursor:pointer;
+        right:1.5%;
+    }
+    .red{
+        color:#f30b6a;
+    }
+    @media only screen and (max-width: 810px){
+/*-------------Queue--------*/
+aside{
+	width:100%;
+	padding-left:0px;
+	position:relative;
+	}
+	.fa-list{
+		right:30px;
+	}
+	#heading{
+	cursor: pointer;
+	}
+	#queue{
+		height:0;
+		overflow: hidden;
+	}
+	.show-queue{
+		height:auto!important;
+		transition:3s all;
+    }
+}
+.cd{
+	border-radius:50%;
+}
+.cd-animation{
+  -webkit-animation-name: rotating-cd;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay:0.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: rotating-cd;
+  animation-duration: 2s;
+  animation-delay:0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.playSong{
+	transition:.5s all;
+}
+.removedElem{
+	width:0!important;
+	visibility: hidden;
+	opacity:0;
+	overflow: hidden;
+}
+.cd>i{
+	visibility: visible!important;
+}
+@keyframes rotating-cd {
+  0%   {transform:rotate(0);}
+  100% {transform:rotate(360deg);}
+}
+@media only screen and (max-width: 810px){
+    aside{
+        width:100%;
+        padding-left:0px;
+        position:relative;
+        }
+        .fa-list{
+            right:30px;
+        }
+        #heading{
+        cursor: pointer;
+        }
+        #queue{
+            height:0;
+            overflow: hidden;
+        }
+        .show-queue{
+            height:auto!important;
+            transition:3s all;
+        }
+    }

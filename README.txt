@@ -3,6 +3,9 @@ This App is created on NodeJS,
         View Engine used: EJS,
             Database: MongoDB,
 
+BUGS: 
+ ====1:  Geet Specials thumb sizes glitch
+
 TODO:
     1. Implement the "songs.js" file on a database.
             --->Creat schema === DONE

@@ -1,32 +1,4 @@
-<main class="flex"> 
-	<!-- The Queue, the list items inside the ol are generated dynamically using javascript in ol. This is so that it is easy to manage and change the songs which are in the queue. -->
-	<aside>
-		<div class="sticky">
-			<div id="heading">
-				<h3 class="font-effect-anaglyph"><i class="fas fa-list"></i>Queue </h3> 
-			</div>
-			<ol id="queue">
-				<!-- One sample list item looks like this: -->
-				<!--
-					<li data-songid="1"> 					 //Song id identifies the song  
-						<div class="ol-number">02</div>      //this li points to, using songs.js
-						<div> 							     //as is done throughout the 
-							<img src="images/thumbs/starboy.jpg">     	//application
-							<i class="fas fa-play"></i>			//Details about how the song-Id
-						</div>									//system works in "songs.js"
-						<div class="name-author font-effect-3d-float">
-							<span>Stargirl Interlude</span><br>  		//song name
-							The Weeknd									//Artist name
-						</div>
-						<div class="ol-heart">
-							<i class="far fa-heart"></i>				//Favorites "heart icon"
-						</div>
-					</li>
-				//Songs can be added to the queue by the user also. 
-				//On page load, the songs with inQueue:true, in songs.js are in the queue-->
-			</ol>
-		</div>
-	</aside>
+<link rel="stylesheet" href="styles/home.css">
 	<!-- The left #main part, including the carousel, top picks, top charts, etc -->
 	<div id="main"> 
 		<div id="carousel" class="flex"> <!-- The carousel -->
@@ -161,4 +133,3 @@
 			</div>
 		</div>
 	</div>
-</main>
