@@ -22,7 +22,7 @@ module.exports.home = function(req, res){
         }
     });
     return res.render('home', {
-        songs: songsArr,
+        songsArr: songsArr,
         queue: queueArr,
         title: 'Geet.com'
     });

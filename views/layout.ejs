@@ -12,6 +12,24 @@
     <%- style %>
 </head>
 <body>
+	<script>
+		var songs = new Array(<%= songsArr.length %>);
+		var i = 0;
+		var tempObj;
+		<% for (let i in songsArr){ %>
+			tempObj = {
+				indexId: <%= songsArr[i].indexID %>,	
+				inQueue: <%= songsArr[i].inQueue %>,	
+				isFav: <%= songsArr[i].isFav %>,	
+				songName: "<%= songsArr[i].songName %>",	
+				duration: "<%= songsArr[i].duration %>",	
+				imgUrl: "<%= songsArr[i].imgUrl %>",	
+				artist: "<%= songsArr[i].artist %>",	
+			};
+			songs[i] = tempObj;
+			i++;
+		<% } %>
+	</script>
 	<script src="scripts/songs.js" type="text/javascript"></script>
 	<!--The header at the top-->
 	<%- include('_header'); %>

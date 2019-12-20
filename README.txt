@@ -14,14 +14,6 @@ TODO:
             --->Implement getting the songs from the database
 
 Thoughts:
-    Implement already made Music Player First, then add Layouts.
-        When implementing layouts: Put 
-                                        "app.set('layout extractStyles', true);"
-                                            and
-                                        "app.set('layout extractScripts', true);"
-                                            in index.js
-                                    and
-                                        Follow step 17 of Notes to set up Partials and Layouts
 
     Add Shuffle, Replay and Volume options 
 
