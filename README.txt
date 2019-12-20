@@ -5,6 +5,7 @@ This App is created on NodeJS,
 
 BUGS: 
  ====1:  Geet Specials thumb sizes glitch
+ ====2:  setting a song as favorite or unfavorite in queue plays it / stops it as well
 
 TODO:
     1. Implement the "songs.js" file on a database.
@@ -21,5 +22,7 @@ Thoughts:
                                             in index.js
                                     and
                                         Follow step 17 of Notes to set up Partials and Layouts
+
+    Add Shuffle, Replay and Volume options 
 
     Implement the Databses
