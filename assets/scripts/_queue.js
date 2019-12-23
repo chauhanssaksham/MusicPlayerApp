@@ -33,7 +33,7 @@ function addSongToQueue(songId){
 	if (itemNum < 10){
 		itemNum = '0' + itemNum;
 	} 
-	var toAdd = '<div class="ol-number">'+itemNum+'</div><div class="songToggleArea"><img src="images/thumbs/'+songs[songId].imgUrl+'"><i class="fas fa-play"></i></div><div class="name-author songToggleArea font-effect-3d-float"><span>'+songs[songId].songName+'</span><br>'+songs[songId].artist+'</div><div class="ol-heart"><i class="far fa-heart"></i></div> </li>';
+	var toAdd = '<div class="ol-number">'+itemNum+'</div><div class="songToggleArea"><img src="./images/thumbs/'+songs[songId].imgUrl+'"><i class="fas fa-play"></i></div><div class="name-author songToggleArea font-effect-3d-float"><span>'+songs[songId].songName+'</span><br>'+songs[songId].artist+'</div><div class="ol-heart"><i class="far fa-heart"></i></div> </li>';
 	var ourLi = queue.appendChild(node);
 	ourLi.innerHTML = toAdd;
 	ourLi.setAttribute('data-songId', songId);

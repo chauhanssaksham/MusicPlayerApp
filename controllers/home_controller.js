@@ -3,24 +3,23 @@ const Queue = require('../models/queue');        //Gets the 'Queues' collection 
 
 //Action for Home Page
 var songsArr, queueArr;
-
+Songs.find({}, function(err, songs){
+    if (err){
+        console.log("Error in fetching Songs!");
+    }
+    else{
+        songsArr = songs;
+    }
+});
+Queue.find({}, function(err, queue){
+    if (err){
+        console.log("Error in fetching Songs!");
+    }
+    else{
+        queueArr = queue;
+    }
+});
 module.exports.home = function(req, res){
-    Songs.find({}, function(err, songs){
-        if (err){
-            console.log("Error in fetching Songs!");
-        }
-        else{
-            songsArr = songs;
-        }
-    });
-    Queue.find({}, function(err, queue){
-        if (err){
-            console.log("Error in fetching Songs!");
-        }
-        else{
-            queueArr = queue;
-        }
-    });
     return res.render('home', {
         songsArr: songsArr,
         queue: queueArr,

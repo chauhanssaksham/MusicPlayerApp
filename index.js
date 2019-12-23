@@ -15,12 +15,12 @@ app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
-//Add Routes to the App
-app.use('/', require('./routes'));
-
 //Set up EJS as our View Engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
+//Add Routes to the App
+app.use('/', require('./routes'));
 
 //The server listens and runs on PORT
 app.listen(port, function(err){

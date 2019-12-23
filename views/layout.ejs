@@ -7,8 +7,12 @@
 	<link rel="icon" href="icon.png" type="image/x-icon" /> <!--Favicon-->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Arimo:700i|Libre+Franklin|Nunito|Rubik&effect=3d-float|anaglyph&display=swap" rel="stylesheet"> Google Fonts Link -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> Font Awesome Link
-	<link rel="stylesheet" href="styles/variables.css">  <!-- Style Sheet containing all variables -->
-    <link rel="stylesheet" href="styles/style.css">		<!-- Main style sheet -->
+	<link rel="stylesheet" href="/styles/variables.css">  <!-- Style Sheet containing all variables -->
+	<link rel="stylesheet" href="/styles/style.css">		<!-- Main style sheet -->
+	<link rel="stylesheet" href="/styles/footer.css">
+	<link rel="stylesheet" href="/styles/queue.css">
+	<link rel="stylesheet" href="/styles/header.css">
+
     <%- style %>
 </head>
 <body>
@@ -30,7 +34,7 @@
 			i++;
 		<% } %>
 	</script>
-	<script src="scripts/songs.js" type="text/javascript"></script>
+	<script src="/scripts/songs.js" type="text/javascript"></script>
 	<!--The header at the top-->
 	<%- include('_header'); %>
     <!-- The main body, includes the left #main part and the queue -->
@@ -39,7 +43,11 @@
         <%- body %>
     </main>
 	<%- include('_footer'); %>
-	<script src="scripts/dynamic.js" type="text/javascript"></script>
+	<script src="scripts/_header.js"></script>
+	<script type="text/javascript" src="/scripts/_queue.js"></script>
+	<script type="text/javascript" src="/scripts/_footer.js"></script>
+	<script type="text/javascript" src="/scripts/dynamic.js"></script>
+
 	<%- script %>
 </body>
 </html>
