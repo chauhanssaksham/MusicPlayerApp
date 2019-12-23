@@ -1,7 +1,7 @@
 /*The songs array, holds the list of songs. Every "song" is an object with the following properties:
 	indexID: obv not needed, but this is for my ease during developing.
 	songName, duration, artist are self explanatory.
-	imgUrl is the name of the image in images/thumbs/ which corresponds to that song.
+	imgUrl is the name of the image in /images/thumbs/ which corresponds to that song.
 	inQueue: If true, then that particular song will be in the queue on page load. As songs are added
 	to the queue, their inQueue is changed to true.
 	If the user tries to add a song to the queue, that is already in the queue, and hence, has its inQueue

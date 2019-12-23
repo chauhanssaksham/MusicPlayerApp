@@ -2,7 +2,7 @@
 function addSongToFormat1(songId, parentId){
 	var parentElem = document.getElementById(parentId).querySelector('.flex');
 	var node=document.createElement('div');
-	var toAdd = '<div class="album-cover playable"><img src="images/thumbs/'+songs[songId].imgUrl+'" alt="'+songs[songId].songName+'" class="playSong" data-songId="'+songId+'"><i class="fas fa-play playSong" data-songId="'+songId+'"></i></div><div class="name-auth font-effect-3d-float"><span>'+songs[songId].songName+'</span><br>'+songs[songId].artist+'<br>'+songs[songId].duration+'</div><div class="rightSide"><div class="relative"><i class="fas fa-ellipsis-v"></i><div class="tooltip"><div class="addSong" data-songId="'+songId+'">Add to queue <i class="fas fa-plus-circle"></i></div><div class="removeSong">Not interested <i class="fas fa-times-circle"></i></div></div></div></div>';
+	var toAdd = '<div class="album-cover playable"><img src="/images/thumbs/'+songs[songId].imgUrl+'" alt="'+songs[songId].songName+'" class="playSong" data-songId="'+songId+'"><i class="fas fa-play playSong" data-songId="'+songId+'"></i></div><div class="name-auth font-effect-3d-float"><span>'+songs[songId].songName+'</span><br>'+songs[songId].artist+'<br>'+songs[songId].duration+'</div><div class="rightSide"><div class="relative"><i class="fas fa-ellipsis-v"></i><div class="tooltip"><div class="addSong" data-songId="'+songId+'">Add to queue <i class="fas fa-plus-circle"></i></div><div class="removeSong">Not interested <i class="fas fa-times-circle"></i></div></div></div></div>';
 	var ourDiv = parentElem.appendChild(node);
 	ourDiv.innerHTML = toAdd;
 	console.log('song id '+songId+'added to '+ parentId);
@@ -10,7 +10,7 @@ function addSongToFormat1(songId, parentId){
 function addSongToFormat2(songId, parentId){
 	var parentElem = document.getElementById(parentId).querySelector('div');
 	var node=document.createElement('div');
-	var toAdd = '<img src="images/thumbs/'+songs[songId].imgUrl+'" alt="'+songs[songId].songName+'" data-songId="'+songId+'" class="playSong"><i class="fas fa-play playSong" data-songId="'+songId+'"></i><div><span>'+songs[songId].songName+'</span>-'+songs[songId].artist+'</div>';
+	var toAdd = '<img src="/images/thumbs/'+songs[songId].imgUrl+'" alt="'+songs[songId].songName+'" data-songId="'+songId+'" class="playSong"><i class="fas fa-play playSong" data-songId="'+songId+'"></i><div><span>'+songs[songId].songName+'</span>-'+songs[songId].artist+'</div>';
 	var ourDiv = parentElem.appendChild(node);
 	ourDiv.classList.add('thumb-image');
 	ourDiv.classList.add('playable');
@@ -154,7 +154,7 @@ function playSong(songId){
 	}
 	currentSong.querySelector('img').classList.add('cd');
 	currentSong.querySelector('img').classList.add('cd-animation');
-	playerImg.setAttribute('src', 'images/thumbs/' + songs[songId].imgUrl);
+	playerImg.setAttribute('src', '/images/thumbs/' + songs[songId].imgUrl);
 	var toAddText = '<span>' + songs[songId].songName + '</span><br>' + songs[songId].artist;
 	playerSongInfo.innerHTML = toAddText;
 	songDuration.innerHTML = songs[songId].duration;
