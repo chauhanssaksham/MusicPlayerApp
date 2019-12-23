@@ -4,8 +4,7 @@ This App is created on NodeJS,
             Database: MongoDB,
 
 BUGS: 
- ====1:  Geet Specials thumb sizes glitch
- ====2: Font awesome pre text bug???
+ ====1: Font awesome pre text bug???
 
 TODO:
     1. Implement the "songs.js" file on a database.
@@ -13,9 +12,13 @@ TODO:
             --->Populate the Database === DONE
             --->Implement getting the songs from the database == DONE
 
-    2. Create an "Artists" and "Albums" page
+    2. Create an "Artists" and "Albums" route
+            ==== Artists route created, with SMW page,
+                    Add content, Style it, dynamize it for other Artists
+                    Same for Albums
 
-    3. Create user login -----> And much more...
+    3. Create user login -----> 
+            ===Then a queue for each user
 
 Thoughts:
 
