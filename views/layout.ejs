@@ -39,8 +39,10 @@
 	<%- include('_header'); %>
     <!-- The main body, includes the left #main part and the queue -->
     <main class="flex">
-        <%- include('_queue') %>
-        <%- body %>
+		<%- include('_queue') %>
+		<div id="main"> 
+			<%- body %>
+		</div>
     </main>
 	<%- include('_footer'); %>
 	<%- script %>

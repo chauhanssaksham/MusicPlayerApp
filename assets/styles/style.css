@@ -21,3 +21,21 @@ main {
 	flex-spacing:space-between;
 	margin-bottom: 60px; 
 }
+#main{
+	width:72%;
+}
+#main>div{
+	max-width:100%;
+	margin:10px 0;
+}
+#main div h3{
+	color:white;
+	font-family: "Rubik", sans-serif;
+	margin:20px 0 6px 20px;
+}
+@media only screen and (max-width: 810px){
+    #main{
+        width:100%;
+        margin-top:25px;
+	}
+}
