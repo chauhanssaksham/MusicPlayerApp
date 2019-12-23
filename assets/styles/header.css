@@ -22,6 +22,7 @@ header div>span{
 	position:relative;
 	top:-15px;
 	left:20%;
+	margin-right:15px;
 }
 header span a{
 	font-family: var(--FF-1);
