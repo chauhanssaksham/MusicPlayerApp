@@ -12,9 +12,7 @@ TODO:
             --->Populate the Database === DONE
             --->Implement getting the songs from the database == DONE
             ------------>Implement the creation of these songs using EJS views and song.id instead of songId
-            ------------>Implement sending songsArr as a function or middleware, not with every controller
-                                                (and requesting only the songs required)
-                                TRY ASYNC-AWAIT for this
+            ------------>Implement sending songsArr as a function or middleware == DONE
 
     2. Create an "Artists" and "Albums" route
             ==== Artists route created, with SMW page,
@@ -22,6 +20,9 @@ TODO:
                     Same for Albums
 
     3. Create user login -----> 
+                        ==User log out
+                        ==Show sign in and sign up only if the user is not signed in, otherwise show profile and logout
+                        ==Put these sign in and signout links in the user icon tooltip
             ===Then a queue for each user
 
     4. Update the code to SCSS and learn the code. Make comments everywhere!
