@@ -39,3 +39,7 @@ module.exports.create = function(req,res){
         }
     });
 }
+
+module.exports.createSession = function(req, res){
+    return res.redirect('/');
+}
