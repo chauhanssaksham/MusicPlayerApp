@@ -2,10 +2,11 @@
 const express = require('express');
 const app = express();
 const port = 9000;
-//Initialize the Database:
-const db = require('./config/mongoose');
-//Initialize Layouts:
-const expressLayouts = require('express-ejs-layouts');
+const db = require('./config/mongoose');        //Initialize the Database
+const expressLayouts = require('express-ejs-layouts');        //Initialize Layouts
+
+
+app.use(express.urlencoded({extended:true}));
 
 //Add the static Folder, '/assets'
 app.use(express.static('./assets'));
