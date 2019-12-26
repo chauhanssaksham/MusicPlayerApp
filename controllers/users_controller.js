@@ -1,10 +1,16 @@
 const User = require('../models/users');        //Gets the 'songs' collection here
 module.exports.signIn = function(req,res){
+    if (req.isAuthenticated()){
+        return res.redirect('/');
+    }
     return res.render('users/sign-in', {
         title: "Sign In!"
     });
 }
 module.exports.signUp = function(req,res){
+    if (req.isAuthenticated()){
+        return res.redirect('/');
+    }
     return res.render('users/sign-up', {
         title: "Sign"
     });

@@ -5,6 +5,7 @@ This App is created on NodeJS,
 
 BUGS: 
  ====1: Font awesome pre text bug???
+ ====2. Queue Scrolling Bug
 
 TODO:
     1. Implement the "songs.js" file on a database.
@@ -20,10 +21,12 @@ TODO:
                     Same for Albums
 
     3. Create user login -----> 
-                        ==User log out
-                        ==Show sign in and sign up only if the user is not signed in, otherwise show profile and logout
-                        ==Put these sign in and signout links in the user icon tooltip
+                        ==User log out =====DONE
+                        ==Show sign in and sign up only if the user is not signed in, otherwise show profile and logout === DONE
+                        ==Put these sign in and signout links in the user icon tooltip ==== DONE
+
             ===Then a queue for each user
+            ===Profile pictures according to the user
 
     4. Update the code to SCSS and learn the code. Make comments everywhere!
 
@@ -35,4 +38,4 @@ Thoughts:
 
     Add Shuffle, loop-play and Volume options 
 
-    Implement the Databses
+    Implement the Databases
