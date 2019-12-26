@@ -2,10 +2,15 @@
 const express = require('express');
 const app = express();
 const port = 9000;
-//Initialize the Database:
-const db = require('./config/mongoose');
-//Initialize Layouts:
-const expressLayouts = require('express-ejs-layouts');
+const db = require('./config/mongoose');        //Initialize the Database
+const expressLayouts = require('express-ejs-layouts');        //Initialize Layouts
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
+const MongoStore = require('connect-mongo')(session);
+const customMiddleware = require('./config/middleware');
+
+app.use(express.urlencoded({extended:true}));
 
 //Add the static Folder, '/assets'
 app.use(express.static('./assets'));
@@ -19,6 +24,29 @@ app.set('layout extractScripts', true);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+app.use(session({
+    name: "GeetCookie",
+    //Change before deployment
+    secret: "lAIka",
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: (1000*60*100)
+    },
+    store: new MongoStore({
+        mongooseConnection: db,
+        autoRemove: 'disabled'
+    }, function(err){
+        console.log(err || "Connect-mongodb setup ok");
+    })
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(passport.setAuthenticatedUser);
+
+app.use(customMiddleware.fetchSongs);
 //Add Routes to the App
 app.use('/', require('./routes'));
 

@@ -1,0 +1,10 @@
+<div><h3> Sign In! </h3>
+<form action="/users/create-session" method="POST">
+    <input type="text" name="userName" placeholder="Username"  required>
+    <input type="password" name="password" placeholder="Password"  required>
+    <input type="submit" value="Sign In">
+</form>
+<% if(locals.user){  %>
+    <h3>Username: <%= user.userName %></h3>
+<% } %>
+</div>
