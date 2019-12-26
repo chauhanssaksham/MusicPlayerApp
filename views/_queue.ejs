@@ -5,23 +5,71 @@
             <h3 class="font-effect-anaglyph"><i class="fas fa-list"></i>Queue </h3> 
         </div>
         <ol id="queue">
+            <script>
+                function toggleHeartsFunction(){
+                    this.classList.toggle('far');
+                    this.classList.toggle('fas');
+                    this.classList.toggle('red');
+                };
+                function queueMouseOver(){
+                    var div = this.getElementsByClassName('name-author');
+                    div[0].classList.remove('font-effect-3d-float');
+                    div[0].classList.add('font-effect-anaglyph');
+                };
+                function queueMouseOut(){
+                    var div = this.getElementsByClassName('name-author');
+                    div[0].classList.add('font-effect-3d-float');
+                    div[0].classList.remove('font-effect-anaglyph');
+                }    
+            </script>
             <!-- One sample list item looks like this: -->
-            <!--
-                <li data-songid="1"> 					 //Song id identifies the song  
-                    <div class="ol-number">02</div>      //this li points to, using songs.js
-                        <div class="songToggleArea"> 							     //as is done throughout the 
-                            <img src="/images/thumbs/starboy.jpg">     	//application
-                            <i class="fas fa-play"></i>			//Details about how the song-Id
-                        </div>									//system works in "songs.js"
+            <% for (let i=0, j=1; i< songsArr.length; i++, j++){ if (songsArr[i].inQueue) {%>
+                <li data-songid="<%= i %>" id="song-in-queue-<%= songsArr[i]._id %>"> 					 
+                    <div class="ol-number">
+                        <% if (j < 10){ %>
+                            0<%= j %>
+                        <% } else { %>
+                            <%= j %>
+                        <% }  %>
+                    </div>    
+                        <div class="songToggleArea"> 					
+                            <img src="/images/thumbs/<%= songsArr[i].imgUrl %>">     	
+                            <i class="fas fa-play"></i>		
+                        </div>									
                         <div class="name-author font-effect-3d-float songToggleArea">
-                            <span>Stargirl Interlude</span><br>  		//song name
-                            The Weeknd									//Artist name
+                            <span><%= songsArr[i].songName %></span><br>  		
+                            <%= songsArr[i].artist %>							
                         </div>
                     <div class="ol-heart">
-                        <i class="far fa-heart"></i>				//Favorites "heart icon"
+                        <i class="far fa-heart"></i>				
                     </div>
                 </li>
-            //Songs can be added to the queue by the user also. 
+                <script>
+                    {
+                    songsInQueue.push(<%= songsArr[i].indexID %>);
+                    let ourLi = document.getElementById('song-in-queue-<%= songsArr[i]._id %>');
+                    var songToggleAreas = ourLi.querySelectorAll(".songToggleArea");
+                    for(let x of songToggleAreas){
+                        x.addEventListener('click', function(){
+                            if (currentSong.getAttribute('data-songId') == <%= songsArr[i].indexID %>){
+                                toggleSong();
+                            } else {
+                            playSong(<%= i %>);
+                        }
+                        });
+                    }
+                    <% if(songsArr[i].isFav){ %>
+                        ourLi.querySelector('.fa-heart').classList.toggle('far');
+                        ourLi.querySelector('.fa-heart').classList.toggle('fas');
+                        ourLi.querySelector('.fa-heart').classList.toggle('red');
+                    <% } %>
+                    ourLi.querySelector('.fa-heart').addEventListener('click', toggleHeartsFunction);
+                    ourLi.addEventListener('mouseover', queueMouseOver);
+                    ourLi.addEventListener('mouseout', queueMouseOut);
+                    }
+                </script>
+            <% } } %>
+            <!--//Songs can be added to the queue by the user also. 
             //On page load, the songs with inQueue:true, in songs.js are in the queue-->
         </ol>
     </div>

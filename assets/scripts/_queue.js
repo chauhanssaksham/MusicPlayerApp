@@ -57,10 +57,3 @@ function addSongToQueue(songId){
 	ourLi.addEventListener('mouseout', queueMouseOut);
 	console.log("song with songId ", songId, " added to queue");
 };
-/*--------------GENERATES THE STARTING QUEUE, ON PAGE LOAD------------*/
-for(var i=0; i<songs.length; i++){
-	if (songs[i].inQueue){
-		addSongToQueue(i);
-	}
-}
-/*----------------Starting queue generator end--------------*/
