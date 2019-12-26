@@ -29,7 +29,7 @@ TODO:
 
     5. Make comments everywhere!
 
-
+    6. Add Notifications using noty and connect-flash
 
 Thoughts:
 
