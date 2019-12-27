@@ -9,6 +9,7 @@ const homeController = require('../controllers/home_controller');
 router.get('/', homeController.home);
 router.use('/artist', require('./artists'));
 router.use('/users', require('./users'));
+router.use('/fetch', require('./fetch'));
 
 //Export the router
 module.exports = router;

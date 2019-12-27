@@ -12,29 +12,11 @@
 	<link rel="stylesheet" href="/styles/footer.css">
 	<link rel="stylesheet" href="/styles/queue.css">
 	<link rel="stylesheet" href="/styles/header.css">
-
+	<script src="/scripts/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="/scripts/songs.js"></script>
     <%- style %>
 </head>
 <body>
-	<script>
-		var songs = new Array(<%= songsArr.length %>);
-		var i = 0;
-		var tempObj;
-		<% for (let i in songsArr){ %>
-			tempObj = {
-				indexId: <%= songsArr[i].indexID %>,	
-				inQueue: <%= songsArr[i].inQueue %>,	
-				isFav: <%= songsArr[i].isFav %>,	
-				songName: "<%= songsArr[i].songName %>",	
-				duration: "<%= songsArr[i].duration %>",	
-				imgUrl: "<%= songsArr[i].imgUrl %>",	
-				artist: "<%= songsArr[i].artist %>",	
-			};
-			songs[i] = tempObj;
-			i++;
-		<% } %>
-		var songsInQueue = [];
-	</script>
 	<!--The header at the top-->
 	<%- include('_header'); %>
     <!-- The main body, includes the left #main part and the queue -->
@@ -45,6 +27,8 @@
 		</div>
     </main>
 	<%- include('_footer'); %>
+
+
 	<%- script %>
 	<script src="/scripts/_header.js"></script>
 	<script type="text/javascript" src="/scripts/_queue.js"></script>
