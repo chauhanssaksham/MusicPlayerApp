@@ -12,7 +12,7 @@ TODO:
             --->Creat schema === DONE
             --->Populate the Database === DONE
             --->Implement getting the songs from the database == DONE
-            ------------>Implement the creation of these songs using EJS views and song.id instead of songId
+            ------------>Implement the creation of these songs using song._id instead of songId or indexID
             ------------>Implement sending songsArr as a function or middleware == DONE
 
     2. Create an "Artists" and "Albums" route
@@ -30,9 +30,7 @@ TODO:
 
     4. Update the code to SCSS and learn the code. Make comments everywhere!
 
-    5. Make comments everywhere!
-
-    6. Add Notifications using noty and connect-flash
+    5. Add Notifications using noty and connect-flash
 
 Thoughts:
 

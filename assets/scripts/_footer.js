@@ -25,3 +25,20 @@ function updateSlider(){
 slider.addEventListener('change', function(){
 	updateSlider();
 });
+/*-----------Code for moving slider if song is playing---------*/
+function moveSliderHelper(){
+	if (slider.value == Number(slider.getAttribute('max'))){
+		nextSong();
+	} else {
+	slider.value++;
+	updateSlider();
+	}
+}
+var id;
+function moveSlider(){
+	id = setInterval(moveSliderHelper, 10);
+}
+function stopSlider(){
+	clearInterval(id);
+}
+/*--------------End moving slider code----------------------*/

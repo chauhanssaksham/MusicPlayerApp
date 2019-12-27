@@ -39,44 +39,52 @@
 			<h3 class="font-effect-anaglyph">Our Top Picks - for you</h3>
 			<div class="flex">
 				<!-- Again, this section is generated dynamically in dynamic.js -->
-				<!-- The songs in this section are listed by their songIds in "topPicksArr" array in songs.js, You can try and change up that array to see how this works-->
 				<!-- Sample of an iteration of song in this section: -->
-				<!-- 
-				<div> //Position:relative
+				<% for (i of topPicksArr){ %>
+				<div> 
 					<div class="album-cover playable">
-						<img src="/images/thumbs/evolve.jpg" alt="Believer" class="playSong" data-songid="16">
-						<i class="fas fa-play playSong" data-songid="16"></i>
+						<img src="/images/thumbs/<%= songsArr[i].imgUrl %>" alt="Believer" class="playSong" data-songid="<%= songsArr[i].indexID %>">
+						<i class="fas fa-play playSong" data-songid="<%= songsArr[i].indexID %>"></i>
 					</div>
 					<div class="name-auth font-effect-3d-float">
-						<span>Believer</span><br>
-						Imagine Dragons<br>
-						3:22
+						<span><%= songsArr[i].songName %></span><br>
+						<%= songsArr[i].artist %><br>
+						<%= songsArr[i].duration %>
 					</div>
-					<div class="rightSide"> //This is positioned absolute, thats why parent class was relative
-						<div class="relative"> //position relative because its children will be positioned relative to this
-							<i class="fas fa-ellipsis-v"></i> //The three dots. Open up a //menu on click (.tooltip)
-							<div class="tooltip"> //The tooltip menu that opens up
-								<div class="addSong" data-songid="16">
+					<div class="rightSide"> 
+						<div class="relative"> 
+							<i class="fas fa-ellipsis-v"></i> 
+							<div class="tooltip">
+								<div class="addSong" data-songid="<%= songsArr[i].indexID %>">
 									Add to queue 
 									<i class="fas fa-plus-circle"></i>
 								</div>
 								<div class="removeSong">
-									Not interested //Removes the song iteration from top //picks...
+									Not interested
 									<i class="fas fa-times-circle"></i>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> 
-				-->
+				</div>
+				<% } %> 
 			</div>
 		</div>
 		<div class="format2" id="top-charts-hollywood">
-			<h3 class="font-effect-anaglyph">Top charts - Bollywood</h3>
+			<h3 class="font-effect-anaglyph">Top charts - Hollywood</h3>
 			<div>
-				<!--songs in the "topChartsHollywood" array in songs.js -->
+				<% for(i of topChartsHollywood) { %>
+					<div class="thumb-image playable">
+						<img src="/images/thumbs/<%= songsArr[i].imgUrl %>" alt="<%= songsArr[i].songName %>" data-songid="<%= songsArr[i].indexID %>" class="playSong">
+						<i class="fas fa-play playSong" data-songid="<%= songsArr[i].indexID %>"></i>
+						<div> 
+							<span><%= songsArr[i].songName %></span>
+							-<%= songsArr[i].artist %>
+						</div>
+					</div> 
+					<% } %>
 			</div>
-		</div>
+		</div> 
 		<div class="format2" id="artists">
 			<!-- This section is relatively incomplete, due to time constraints. The plan was to:
 			a. Generate this section dynamically too, with each artist having it's artist id
@@ -111,24 +119,50 @@
 		<div class="format2" id="top-charts-bollywood">
 			<h3 class="font-effect-anaglyph">Top charts - Bollywood</h3>
 			<div>
-				<!--songs in the "topChartsBollywood" array in songs.js -->
 				<!-- Sample iteration of a song in format 2: -->
-				<!-- 
+				<% for(i of topChartsBollywood) { %>
 				<div class="thumb-image playable">
-					<img src="/images/thumbs/pbx1.jpg" alt="Kaala Chashma - Skit" data-songid="25" class="playSong">
-					<i class="fas fa-play playSong" data-songid="25"></i>
-					<div> 			//The tooltip that pops down with the song Name and the 
-						<span>Kaala Chashma - Skit</span>			//artist
-						-Sidhu Moosewala
+					<img src="/images/thumbs/<%= songsArr[i].imgUrl %>" alt="<%= songsArr[i].songName %>" data-songid="<%= songsArr[i].indexID %>" class="playSong">
+					<i class="fas fa-play playSong" data-songid="<%= songsArr[i].indexID %>"></i>
+					<div> 
+						<span><%= songsArr[i].songName %></span>
+						-<%= songsArr[i].artist %>
 					</div>
 				</div> 
-				-->
+				<% } %>
 			</div>
 		</div>
 		<div class="format1" id="geet-specials">
 			<h3 class="font-effect-anaglyph">Geet Specials</h3>
 			<div class="flex">
-				<!--songs in the "geetSpecialsArr" array in songs.js -->
+				<% for (i of geetSpecialsArr){ %>
+					<div> 
+						<div class="album-cover playable">
+							<img src="/images/thumbs/<%= songsArr[i].imgUrl %>" alt="Believer" class="playSong" data-songid="<%= songsArr[i].indexID %>">
+							<i class="fas fa-play playSong" data-songid="<%= songsArr[i].indexID %>"></i>
+						</div>
+						<div class="name-auth font-effect-3d-float">
+							<span><%= songsArr[i].songName %></span><br>
+							<%= songsArr[i].artist %><br>
+							<%= songsArr[i].duration %>
+						</div>
+						<div class="rightSide"> 
+							<div class="relative"> 
+								<i class="fas fa-ellipsis-v"></i> 
+								<div class="tooltip">
+									<div class="addSong" data-songid="<%= songsArr[i].indexID %>">
+										Add to queue 
+										<i class="fas fa-plus-circle"></i>
+									</div>
+									<div class="removeSong">
+										Not interested
+										<i class="fas fa-times-circle"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<% } %> 
 			</div>
 		</div>
 <script src="scripts/_home.js"></script>
